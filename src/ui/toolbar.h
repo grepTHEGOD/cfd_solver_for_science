@@ -13,6 +13,11 @@ struct Toolbar {
     GtkToolItem *btn_pause;
     GtkToolItem *btn_reset;
     GtkToolItem *btn_screenshot;
+    void (*on_import)(void*);
+    void (*on_play)(void*);
+    void (*on_pause)(void*);
+    void (*on_reset)(void*);
+    void *user_data;
 };
 
 Toolbar* toolbar_create(void);

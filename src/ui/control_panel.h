@@ -71,6 +71,9 @@ struct ControlPanel {
     double turbulence;
     double viscosity;
     double characteristic_length;
+    
+    void (*on_param_changed)(void*);
+    void *user_data;
 };
 
 ControlPanel* control_panel_create(void);

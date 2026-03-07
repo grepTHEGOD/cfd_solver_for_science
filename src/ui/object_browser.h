@@ -28,6 +28,9 @@ struct ObjectBrowser {
     GtkTreeStore *tree_store;
     GList *objects;
     int next_id;
+    void (*on_select)(void*, int);
+    void (*on_toggle_visibility)(void*, int, gboolean);
+    void *user_data;
 };
 
 ObjectBrowser* object_browser_create(void);

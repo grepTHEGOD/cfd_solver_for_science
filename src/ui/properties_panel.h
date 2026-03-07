@@ -35,6 +35,11 @@ struct PropertiesPanel {
     GtkWidget *lighting_check;
     
     int selected_object_id;
+    void (*on_representation_changed)(void*, RepresentationType);
+    void (*on_opacity_changed)(void*, double);
+    void (*on_colormap_changed)(void*, ColormapType);
+    void (*on_range_changed)(void*, double, double);
+    void *user_data;
 };
 
 PropertiesPanel* properties_panel_create(void);
