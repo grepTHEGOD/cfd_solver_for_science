@@ -3,8 +3,8 @@
 ## 1. Project Overview
 
 **Project Name:** CFD Studio  
-**Type:** Desktop Application (Pure C with GTK3 + OpenGL)  
-**Core Functionality:** A ParaView-inspired CFD visualization application with integrated controls, multi-format 3D model import, and real-time parameter manipulation  
+**Type:** Desktop Application (Pure C with raylib)  
+**Core Functionality:** A CFD visualization application with Onshape-inspired UI, 3D model import, and real-time aerodynamic analysis
 **Target Users:** Engineers, researchers, students working on aerodynamic analysis and fluid dynamics
 
 ---
@@ -15,29 +15,28 @@
 
 **Main Window:**
 - Dimensions: 1600x900 minimum, resizable
-- Style: Dark theme (like ParaView)
-- Layout: Multi-panel with collapsible sidebars
+- Style: Dark theme (Onshape-inspired)
+- Layout: Multi-panel with toolbar
 
 **Layout Regions:**
 ```
 +------------------------------------------------------------------+
-|  Menu Bar                                                         |
-+------------------------------------------------------------------+
-|  Toolbar (Import, Export, Play, Pause, Reset)                   |
+|  Toolbar (Import, Grid, Axis, Wireframe, Reset)                 |
 +------------------+-------------------------------+---------------+
 |                  |                               |               |
-|  Object Browser  |     3D Viewport               |  Properties   |
-|  (Left Panel)    |     (OpenGL)                  |  Panel        |
+|  Object Browser  |     3D Viewport              |  Results      |
+|  (Left Panel)   |     (raylib/OpenGL)           |  Panel        |
 |                  |                               |  (Right)      |
-|  - Model tree    |                               |               |
-|  - Layers        |                               |  - Materials  |
-|  - Data arrays   |                               |  - Colors     |
-|                  |                               |  - Filters    |
+|  - Model tree    |     Mouse controls:           |               |
+|  - Layers        |     - Left: Rotate            |  - Forces     |
+|                  |     - Middle: Pan             |  - Heat       |
+|                  |     - Scroll: Zoom            |               |
 +------------------+-------------------------------+---------------+
 |                    Control Panel (Bottom)                        |
-|  [Sliders: Speed, Angle, Altitude, Pressure, Temperature...]    |
+|  [Sliders: Speed | Altitude | Distance | Fuel | AoA]           |
+|  [Toggles: mph/Mach | ft/m]]                                     |
 +------------------------------------------------------------------+
-|  Status Bar: Units | Simulation Status | Performance Metrics     |
+|  Status: Controls help                                           |
 +------------------------------------------------------------------+
 ```
 
@@ -51,64 +50,46 @@
 - Accent Secondary: `#0E639C`
 - Text Primary: `#CCCCCC`
 - Text Secondary: `#858585`
-- Success: `#4EC9B0`
-- Warning: `#DDB100`
-- Error: `#F14C4C`
 
 **Typography:**
-- Font Family: "Segoe UI", "Cantarell", sans-serif
-- Heading Size: 14px bold
-- Body Size: 12px
-- Small/Labels: 10px
-
-**Spacing System:**
-- Base unit: 4px
-- Panel padding: 8px
-- Element gap: 4px
-- Section gap: 16px
+- Font Family: System default (raylib)
+- Heading Size: 16px bold
+- Body Size: 14px
 
 ### 2.3 Components
 
-**Object Browser (Left Panel - 250px width):**
-- Tree view with collapsible nodes
-- Icons for different object types
-- Checkboxes for visibility toggle
-- Right-click context menu
+**Toolbar:**
+- Import button (placeholder for file dialog)
+- Grid toggle
+- Axis toggle
+- Wireframe toggle
+- Camera reset
 
-**3D Viewport (Center):**
-- OpenGL rendering context
+**3D Viewport:**
+- raylib OpenGL rendering
 - Mouse controls: rotate (left), pan (middle), zoom (scroll)
 - Grid floor toggle
 - Axis indicator (3D triad)
-- Camera presets (Top, Front, Side, Iso)
 
-**Properties Panel (Right Panel - 300px width):**
-- Tabbed interface: Display, Data, Filters
-- Color mapping controls
-- Opacity slider
-- Representation selector (Surface, Wireframe, Points)
+**Control Panel:**
+- Airspeed slider (0-2000)
+- Altitude slider (0-100000 ft/m)
+- Distance slider (0-50000 km)
+- Fuel slider (0-100000 kg)
+- Angle of Attack slider (-45 to 45 deg)
+- Unit toggles: mph/Mach, ft/m
+- Derived values display: Mach, Reynolds, Density, Dynamic Pressure, Sound Speed
 
-**Control Panel (Bottom - 200px height, collapsible):**
-```
-+---------------------------------------------------------------+
-|  [<<] Simulation Parameters                                   |
-+---------------------------------------------------------------+
-|  Airspeed:     [====|=========] 150.0 mph    [mph▼]           |
-|  Altitude:     [==|===========] 10000 ft     [feet▼]          |
-|  Angle of Att: [==|===========] 5.0 deg                      |
-|  Pressure:     [====|=========] 101.325 kPa                   |
-|  Temperature:  [======|=======] 288.15 K                       |
-|  Density:      [====|=========] 1.225 kg/m³                   |
-|  Mach Number:  0.20                                           |
-|  Reynolds #:   2.5e6                                          |
-+---------------------------------------------------------------+
-```
-
-**Unit Toggles:**
-- Altitude: feet ↔ meters (toggle button with indicator light)
-- Speed: mph ↔ mach (toggle button with indicator light)
-- Temperature: K ↔ °C ↔ °F
-- Pressure: Pa ↔ kPa ↔ psi ↔ atm
+**Results Panel:**
+- Lift force (N)
+- Drag force (N)
+- Side force (N)
+- Lift coefficient (Cl)
+- Drag coefficient (Cd)
+- Heat flux (W/m²)
+- Surface temperature (K)
+- Stagnation temperature (K)
+- Thermal load (W)
 
 ---
 
@@ -117,194 +98,110 @@
 ### 3.1 Core Features
 
 **3D Model Import:**
-- Supported formats: STL (binary and ASCII), OBJ, custom CFD mesh format
-- Drag-and-drop support
-- Recent files list
-- Model centering and scaling
+- Supported formats: STL, OBJ
+- Placeholder for drag-and-drop
 
-**Visualization Types:**
-1. **Pressure Contours** - Color-mapped pressure distribution
-2. **Velocity Vectors** - Arrow glyphs showing flow direction/magnitude
-3. **Streamlines** - Animated particle paths
-4. **Heat Map** - Temperature distribution
-5. **Force Vectors** - Lift, drag, moment arrows on model
-6. **Wall Shear Stress** - Friction visualization
-7. **Iso-surfaces** - 3D regions of constant value
+**Visualization:**
+- 3D viewport with raylib
+- Wireframe and solid modes
+- Grid and axis display
+- Camera orbit/pan/zoom
 
-**Data Display:**
-- Drag coefficient (Cd)
-- Lift coefficient (Cl)
-- Pressure differential
-- Heat flux (W/m²)
-- Total forces (N)
-- Moments (N·m)
+**Physics Calculations:**
+- Lift and drag coefficients
+- Forces (lift, drag, side)
+- Heat transfer (convective heat flux, stagnation temperature)
+- Atmospheric properties (density, pressure, sound speed)
+- Mach number and Reynolds number
 
-### 3.2 Simulation Parameters (Sliders)
+### 3.2 Simulation Parameters
 
 | Parameter | Range | Default | Unit |
 |-----------|-------|---------|------|
-| Airspeed | 0-2000 | 150 | mph/mach |
-| Altitude | 0-100000 | 0 | feet/m |
+| Airspeed | 0-2000 | 150 | mph/Mach |
+| Altitude | 0-100000 | 0 | ft/m |
+| Distance | 0-50000 | 1000 | km |
+| Fuel | 0-100000 | 5000 | kg |
 | Angle of Attack | -45 to 45 | 0 | degrees |
-| Freestream Pressure | 50-150 | 101.325 | kPa |
-| Freestream Temperature | 150-400 | 288.15 | K |
-| Turbulence Intensity | 0-100 | 5 | % |
-| Viscosity | 1e-6 to 1e-3 | 1.8e-5 | Pa·s |
 
-### 3.3 Unit Conversion System
-
-**Altitude:**
-- 1 foot = 0.3048 meters
-- Display toggle with live conversion
+### 3.3 Unit Conversion
 
 **Speed:**
-- 1 mph = 0.44704 m/s
-- 1 Mach (sea level, std) = 343 m/s
-- Mach number calculated from altitude (sound speed varies)
+- mph ↔ Mach
+- Display with toggle
 
-**Derived Calculations:**
-- Reynolds Number: Re = ρVL/μ
-- Dynamic Pressure: q = 0.5ρV²
-- Mach Number: M = V/a (where a = √(γRT))
+**Altitude:**
+- feet ↔ meters
+- Display with toggle
 
-### 3.4 Additional Feature Ideas
+---
 
-1. **Animation Mode** - Animate parameter changes over time
-2. **Multi-case Comparison** - Side-by-side result comparison
-3. **Cut Plane Widget** - Define arbitrary slicing planes
-4. **Probe Tool** - Click to get exact values at point
-5. **Report Generator** - Export PDF/HTML analysis reports
-6. **Cloud Simulation** - Connect to remote HPC clusters
-7. **VR View** - Immersive 3D inspection
-8. **Video Export** - Record animations
-9. **Scripting Console** - Python scripting for automation
-10. **Parametric Study** - Sweep parameters automatically
+## 4. Technical Implementation
 
-### 3.5 Architecture (Pure C)
+### 4.1 Architecture (Pure C + raylib)
 
 ```
 src/
-├── main.c                    # Entry point, GTK app setup
-├── cfd_app.c                 # Application state management
+├── main.c                    # Entry point, raylib window and game loop
+├── cfd_app.c                # Application state management
 ├── cfd_app.h                 
 ├── ui/
-│   ├── main_window.c          # Window creation, layout
-│   ├── main_window.h
-│   ├── menu_bar.c             # Menu handlers
-│   ├── menu_bar.h
-│   ├── toolbar.c              # Toolbar buttons
-│   ├── toolbar.h
-│   ├── object_browser.c       # Left panel tree view
-│   ├── object_browser.h
-│   ├── properties_panel.c      # Right panel controls
-│   ├── properties_panel.h
-│   ├── control_panel.c        # Bottom sliders
-│   ├── control_panel.h
-│   ├── status_bar.c           # Status display
-│   └── status_bar.h
+│   ├── gui_framework.c       # Custom UI components (buttons, sliders, toggles)
+│   ├── gui_framework.h
+│   └── control_panel.c       # Bottom panel with sliders
+│   └── control_panel.h
 ├── viewport/
-│   ├── gl_viewport.c          # OpenGL viewport widget
-│   ├── gl_viewport.h
-│   ├── camera.c               # Camera orbit/pan/zoom
-│   ├── camera.h
-│   ├── shader.c               # GLSL shaders
-│   ├── shader.h
-│   ├── mesh_renderer.c        # Mesh drawing
-│   └── mesh_renderer.h
-├── models/
-│   ├── mesh.c                 # Mesh data structure
-│   ├── mesh.h
-│   ├── stl_loader.c           # STL file import
-│   ├── stl_loader.h
-│   ├── obj_loader.c           # OBJ file import
-│   ├── obj_loader.h
-│   └── model_manager.c        # Model CRUD
-│   └── model_manager.h
-├── viz/
-│   ├── colormap.c             # Color mapping utilities
-│   ├── colormap.h
-│   ├── contour.c              # Contour generation
-│   ├── contour.h
-│   ├── vectors.c              # Vector field glyphs
-│   ├── vectors.h
-│   ├── streamlines.c          # Streamline computation
-│   ├── streamlines.h
-│   └── force_arrows.c         # Force visualization
-│   └── force_arrows.h
+│   ├── viewport_3d.c         # 3D rendering with raylib
+│   └── viewport_3d.h
 ├── physics/
-│   ├── units.c                # Unit conversions
+│   ├── units.c               # Unit conversions
 │   ├── units.h
-│   ├── atmosphere.c           # ISA atmosphere model
+│   ├── atmosphere.c          # ISA atmosphere model
 │   ├── atmosphere.h
-│   ├── forces.c               # Force calculations
-│   └── forces.h
-└── utils/
-    ├── math_utils.c           # Vector/matrix math
-    ├── math_utils.h
-    ├── logger.c               # Logging
-    └── logger.h
+│   ├── forces.c              # Force calculations
+│   ├── forces.h
+│   └── heat_transfer.c      # Heat transfer calculations
+│   └── heat_transfer.h
+└── models/
+    ├── mesh.h
+    └── model_manager.c
+```
+
+### 4.2 Dependencies
+
+- raylib (6.0) - Graphics and windowing
+- math library (libm)
+- dl library (dynamic loading)
+- pthread (threading)
+- X11 (windowing system)
+
+---
+
+## 5. Build Instructions
+
+```bash
+mkdir build && cd build
+cmake ..
+make
+./cfd_studio
+```
+
+**Runtime library path:**
+```bash
+export LD_LIBRARY_PATH=/home/grep/local/home/grep/local/lib:$LD_LIBRARY_PATH
 ```
 
 ---
 
-## 4. Technical Requirements
+## 6. Acceptance Criteria
 
-### 4.1 Dependencies
-
-**Required Libraries:**
-- GTK3 (>= 3.22) - GUI toolkit
-- GLEW (>= 2.0) - OpenGL extension management
-- GLM (header-only) - Math library OR custom math
-- libepoxy - OpenGL function loading
-
-**Build System:**
-- CMake >= 3.10
-
-### 4.2 OpenGL Requirements
-
-- OpenGL 3.3 Core Profile minimum
-- GLSL 330 shaders
-- Vertex Buffer Objects (VBOs)
-- VAO (Vertex Array Objects)
-
-### 4.3 Acceptance Criteria
-
-- [ ] CMakeLists.txt builds without errors
-- [ ] Links against GTK3 and OpenGL libraries
-- [ ] Executable launches on Linux
-- [ ] Main window renders with dark theme
-- [ ] Three-panel layout displays correctly
-- [ ] All sliders respond to input
-- [ ] Unit toggles switch values correctly
-- [ ] Can import STL file and display in viewport
-- [ ] Camera controls work (rotate, pan, zoom)
-- [ ] Contour coloring displays on model
-- [ ] Unit conversions are accurate
-- [ ] Derived parameters update in real-time
-
----
-
-## 5. Implementation Notes
-
-### 5.1 OpenGL Shaders
-
-**Vertex Shader:** Transform vertices, pass normals and positions to fragment
-**Fragment Shader:** Simple Phong lighting + optional color mapping
-
-### 5.2 Model Data Structure
-
-```c
-typedef struct {
-    float *vertices;    // Position (x, y, z) per vertex
-    float *normals;     // Normal (nx, ny, nz) per vertex
-    float *colors;      // RGBA per vertex (for visualization)
-    float *uvs;         // Texture coords if needed
-    unsigned int *indices;
-    int vertex_count;
-    int face_count;
-} Mesh;
-```
-
-### 5.3 Color Mapping
-
-Rainbow colormap: Blue (low) → Cyan → Green → Yellow → Red (high)
+- [x] CMakeLists.txt builds without errors
+- [x] Executable links and builds
+- [x] Main window renders with dark theme
+- [x] Three-panel layout displays correctly
+- [x] All sliders respond to input
+- [x] Unit toggles switch values correctly
+- [x] Camera controls work (rotate, pan, zoom)
+- [x] Force calculations display in results panel
+- [x] Heat transfer calculations display
+- [x] Derived parameters update in real-time

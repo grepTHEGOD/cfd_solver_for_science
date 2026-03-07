@@ -1,0 +1,7 @@
+/home/grep/cfd_solver_for_science/build/CMakeFiles/cfd_studio.dir
+/home/grep/cfd_solver_for_science/build/CMakeFiles/edit_cache.dir
+/home/grep/cfd_solver_for_science/build/CMakeFiles/rebuild_cache.dir
+/home/grep/cfd_solver_for_science/build/CMakeFiles/list_install_components.dir
+/home/grep/cfd_solver_for_science/build/CMakeFiles/install.dir
+/home/grep/cfd_solver_for_science/build/CMakeFiles/install/local.dir
+/home/grep/cfd_solver_for_science/build/CMakeFiles/install/strip.dir

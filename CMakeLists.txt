@@ -8,87 +8,61 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -g")
 set(CMAKE_C_FLAGS_DEBUG "-O0")
 set(CMAKE_C_FLAGS_RELEASE "-O3 -DNDEBUG")
 
+set(ENV{PKG_CONFIG_PATH} "/home/grep/local/home/grep/local/lib/pkgconfig:$ENV{PKG_CONFIG_PATH}")
 find_package(PkgConfig REQUIRED)
-pkg_check_modules(GTK3 REQUIRED gtk+-3.0)
-pkg_check_modules(GLEW REQUIRED glew)
-pkg_check_modules(EPOXY REQUIRED epoxy)
+pkg_check_modules(RAYLIB REQUIRED raylib)
 
-include_directories(
-    ${CMAKE_SOURCE_DIR}/src
-    ${GTK3_INCLUDE_DIRS}
-    ${GLEW_INCLUDE_DIRS}
-    ${EPOXY_INCLUDE_DIRS}
-)
+# Ensure raylib include directories and library paths are properly set
+include_directories(${RAYLIB_INCLUDE_DIRS})
+link_directories(${RAYLIB_LIBRARY_DIRS})
 
+# Add include paths
+include_directories(${CMAKE_SOURCE_DIR}/src)
+include_directories(${CMAKE_SOURCE_DIR}/src/physics)
+
+# Add raylib library explicitly
+set(RAYLIB_LIB /home/grep/local/home/grep/local/lib/libraylib.so)
+
+# Define the cfd_studio target as an executable
 set(SOURCES
     src/main.c
     src/cfd_app.c
-    src/ui/main_window.c
-    src/ui/menu_bar.c
-    src/ui/toolbar.c
-    src/ui/object_browser.c
-    src/ui/properties_panel.c
+    src/ui/gui_framework.c
     src/ui/control_panel.c
-    src/ui/status_bar.c
-    src/viewport/gl_viewport.c
-    src/viewport/camera.c
-    src/viewport/shader.c
-    src/viewport/mesh_renderer.c
-    src/models/mesh.c
-    src/models/stl_loader.c
-    src/models/obj_loader.c
-    src/models/model_manager.c
-    src/viz/colormap.c
-    src/viz/contour.c
-    src/viz/vectors.c
-    src/viz/streamlines.c
-    src/viz/force_arrows.c
-    src/physics/units.c
+    src/viewport/viewport_3d.c
+    src/physics/heat_transfer.c
     src/physics/atmosphere.c
     src/physics/forces.c
-    src/utils/math_utils.c
-    src/utils/logger.c
+    src/physics/units.c
+    src/models/model_manager.c
 )
 
 set(HEADERS
     src/cfd_app.h
-    src/ui/main_window.h
-    src/ui/menu_bar.h
-    src/ui/toolbar.h
-    src/ui/object_browser.h
-    src/ui/properties_panel.h
+    src/ui/gui_framework.h
     src/ui/control_panel.h
-    src/ui/status_bar.h
-    src/viewport/gl_viewport.h
-    src/viewport/camera.h
-    src/viewport/shader.h
-    src/viewport/mesh_renderer.h
-    src/models/mesh.h
-    src/models/stl_loader.h
-    src/models/obj_loader.h
-    src/models/model_manager.h
-    src/viz/colormap.h
-    src/viz/contour.h
-    src/viz/vectors.h
-    src/viz/streamlines.h
-    src/viz/force_arrows.h
+    src/viewport/viewport_3d.h
+    src/physics/heat_transfer.h
     src/physics/units.h
     src/physics/atmosphere.h
     src/physics/forces.h
-    src/utils/math_utils.h
+    src/models/model_manager.h
+    src/models/mesh.h
+    src/models/obj_loader.h
+    src/models/stl_loader.h
     src/utils/logger.h
+    src/utils/math_utils.h
+    src/viz/colormap.h
+    src/viz/contour.h
+    src/viz/force_arrows.h
+    src/viz/streamlines.h
+    src/viz/vectors.h
 )
 
 add_executable(cfd_studio ${SOURCES} ${HEADERS})
 
-target_link_libraries(cfd_studio
-    ${GTK3_LIBRARIES}
-    ${GLEW_LIBRARIES}
-    ${EPOXY_LIBRARIES}
-    m
-    dl
-)
+target_link_libraries(cfd_studio ${RAYLIB_LIB} m)
 
-target_compile_options(cfd_studio PRIVATE ${GTK3_CFLAGS_OTHER})
+target_compile_options(cfd_studio PRIVATE ${RAYLIB_CFLAGS_OTHER})
 
 install(TARGETS cfd_studio DESTINATION bin)
