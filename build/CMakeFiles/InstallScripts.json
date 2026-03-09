@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/grep/cfd_solver_for_science/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

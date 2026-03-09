@@ -1,0 +1,104 @@
+[
+{
+  "directory": "/home/grep/cfd_solver_for_science/cpp/build",
+  "command": "/usr/bin/c++  -I/home/grep/cfd_solver_for_science/cpp/include -std=gnu++20 -Wall -Wextra -Wpedantic -o CMakeFiles/cfd_studio_cpp.dir/src/main.cpp.o -c /home/grep/cfd_solver_for_science/cpp/src/main.cpp",
+  "file": "/home/grep/cfd_solver_for_science/cpp/src/main.cpp",
+  "output": "CMakeFiles/cfd_studio_cpp.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/grep/cfd_solver_for_science/cpp/build",
+  "command": "/usr/bin/c++  -I/home/grep/cfd_solver_for_science/cpp/include -std=gnu++20 -Wall -Wextra -Wpedantic -o CMakeFiles/cfd_studio_cpp.dir/src/app/application.cpp.o -c /home/grep/cfd_solver_for_science/cpp/src/app/application.cpp",
+  "file": "/home/grep/cfd_solver_for_science/cpp/src/app/application.cpp",
+  "output": "CMakeFiles/cfd_studio_cpp.dir/src/app/application.cpp.o"
+},
+{
+  "directory": "/home/grep/cfd_solver_for_science/cpp/build",
+  "command": "/usr/bin/c++  -I/home/grep/cfd_solver_for_science/cpp/include -std=gnu++20 -Wall -Wextra -Wpedantic -o CMakeFiles/cfd_studio_cpp.dir/src/app/scene.cpp.o -c /home/grep/cfd_solver_for_science/cpp/src/app/scene.cpp",
+  "file": "/home/grep/cfd_solver_for_science/cpp/src/app/scene.cpp",
+  "output": "CMakeFiles/cfd_studio_cpp.dir/src/app/scene.cpp.o"
+},
+{
+  "directory": "/home/grep/cfd_solver_for_science/cpp/build",
+  "command": "/usr/bin/c++  -I/home/grep/cfd_solver_for_science/cpp/include -std=gnu++20 -Wall -Wextra -Wpedantic -o CMakeFiles/cfd_studio_cpp.dir/src/physics/atmosphere.cpp.o -c /home/grep/cfd_solver_for_science/cpp/src/physics/atmosphere.cpp",
+  "file": "/home/grep/cfd_solver_for_science/cpp/src/physics/atmosphere.cpp",
+  "output": "CMakeFiles/cfd_studio_cpp.dir/src/physics/atmosphere.cpp.o"
+},
+{
+  "directory": "/home/grep/cfd_solver_for_science/cpp/build",
+  "command": "/usr/bin/c++  -I/home/grep/cfd_solver_for_science/cpp/include -std=gnu++20 -Wall -Wextra -Wpedantic -o CMakeFiles/cfd_studio_cpp.dir/src/physics/forces.cpp.o -c /home/grep/cfd_solver_for_science/cpp/src/physics/forces.cpp",
+  "file": "/home/grep/cfd_solver_for_science/cpp/src/physics/forces.cpp",
+  "output": "CMakeFiles/cfd_studio_cpp.dir/src/physics/forces.cpp.o"
+},
+{
+  "directory": "/home/grep/cfd_solver_for_science/cpp/build",
+  "command": "/usr/bin/c++  -I/home/grep/cfd_solver_for_science/cpp/include -std=gnu++20 -Wall -Wextra -Wpedantic -o CMakeFiles/cfd_studio_cpp.dir/src/physics/heat_transfer.cpp.o -c /home/grep/cfd_solver_for_science/cpp/src/physics/heat_transfer.cpp",
+  "file": "/home/grep/cfd_solver_for_science/cpp/src/physics/heat_transfer.cpp",
+  "output": "CMakeFiles/cfd_studio_cpp.dir/src/physics/heat_transfer.cpp.o"
+},
+{
+  "directory": "/home/grep/cfd_solver_for_science/cpp/build",
+  "command": "/usr/bin/c++  -I/home/grep/cfd_solver_for_science/cpp/include -std=gnu++20 -Wall -Wextra -Wpedantic -o CMakeFiles/cfd_studio_cpp.dir/src/physics/units.cpp.o -c /home/grep/cfd_solver_for_science/cpp/src/physics/units.cpp",
+  "file": "/home/grep/cfd_solver_for_science/cpp/src/physics/units.cpp",
+  "output": "CMakeFiles/cfd_studio_cpp.dir/src/physics/units.cpp.o"
+},
+{
+  "directory": "/home/grep/cfd_solver_for_science/cpp/build",
+  "command": "/usr/bin/c++  -I/home/grep/cfd_solver_for_science/cpp/include -std=gnu++20 -Wall -Wextra -Wpedantic -o CMakeFiles/cfd_studio_cpp.dir/src/rendering/renderer.cpp.o -c /home/grep/cfd_solver_for_science/cpp/src/rendering/renderer.cpp",
+  "file": "/home/grep/cfd_solver_for_science/cpp/src/rendering/renderer.cpp",
+  "output": "CMakeFiles/cfd_studio_cpp.dir/src/rendering/renderer.cpp.o"
+},
+{
+  "directory": "/home/grep/cfd_solver_for_science/cpp/build",
+  "command": "/usr/bin/c++  -I/home/grep/cfd_solver_for_science/cpp/include -std=gnu++20 -Wall -Wextra -Wpedantic -o CMakeFiles/cfd_studio_cpp.dir/src/rendering/shader.cpp.o -c /home/grep/cfd_solver_for_science/cpp/src/rendering/shader.cpp",
+  "file": "/home/grep/cfd_solver_for_science/cpp/src/rendering/shader.cpp",
+  "output": "CMakeFiles/cfd_studio_cpp.dir/src/rendering/shader.cpp.o"
+},
+{
+  "directory": "/home/grep/cfd_solver_for_science/cpp/build",
+  "command": "/usr/bin/c++  -I/home/grep/cfd_solver_for_science/cpp/include -std=gnu++20 -Wall -Wextra -Wpedantic -o CMakeFiles/cfd_studio_cpp.dir/src/rendering/mesh.cpp.o -c /home/grep/cfd_solver_for_science/cpp/src/rendering/mesh.cpp",
+  "file": "/home/grep/cfd_solver_for_science/cpp/src/rendering/mesh.cpp",
+  "output": "CMakeFiles/cfd_studio_cpp.dir/src/rendering/mesh.cpp.o"
+},
+{
+  "directory": "/home/grep/cfd_solver_for_science/cpp/build",
+  "command": "/usr/bin/c++  -I/home/grep/cfd_solver_for_science/cpp/include -std=gnu++20 -Wall -Wextra -Wpedantic -o CMakeFiles/cfd_studio_cpp.dir/src/rendering/camera.cpp.o -c /home/grep/cfd_solver_for_science/cpp/src/rendering/camera.cpp",
+  "file": "/home/grep/cfd_solver_for_science/cpp/src/rendering/camera.cpp",
+  "output": "CMakeFiles/cfd_studio_cpp.dir/src/rendering/camera.cpp.o"
+},
+{
+  "directory": "/home/grep/cfd_solver_for_science/cpp/build",
+  "command": "/usr/bin/c++  -I/home/grep/cfd_solver_for_science/cpp/include -std=gnu++20 -Wall -Wextra -Wpedantic -o CMakeFiles/cfd_studio_cpp.dir/src/rendering/gl_functions.cpp.o -c /home/grep/cfd_solver_for_science/cpp/src/rendering/gl_functions.cpp",
+  "file": "/home/grep/cfd_solver_for_science/cpp/src/rendering/gl_functions.cpp",
+  "output": "CMakeFiles/cfd_studio_cpp.dir/src/rendering/gl_functions.cpp.o"
+},
+{
+  "directory": "/home/grep/cfd_solver_for_science/cpp/build",
+  "command": "/usr/bin/c++  -I/home/grep/cfd_solver_for_science/cpp/include -std=gnu++20 -Wall -Wextra -Wpedantic -o CMakeFiles/cfd_studio_cpp.dir/src/geometry/scramjet_geometry.cpp.o -c /home/grep/cfd_solver_for_science/cpp/src/geometry/scramjet_geometry.cpp",
+  "file": "/home/grep/cfd_solver_for_science/cpp/src/geometry/scramjet_geometry.cpp",
+  "output": "CMakeFiles/cfd_studio_cpp.dir/src/geometry/scramjet_geometry.cpp.o"
+},
+{
+  "directory": "/home/grep/cfd_solver_for_science/cpp/build",
+  "command": "/usr/bin/c++  -I/home/grep/cfd_solver_for_science/cpp/include -std=gnu++20 -Wall -Wextra -Wpedantic -o CMakeFiles/cfd_studio_cpp.dir/src/visualization/streamlines.cpp.o -c /home/grep/cfd_solver_for_science/cpp/src/visualization/streamlines.cpp",
+  "file": "/home/grep/cfd_solver_for_science/cpp/src/visualization/streamlines.cpp",
+  "output": "CMakeFiles/cfd_studio_cpp.dir/src/visualization/streamlines.cpp.o"
+},
+{
+  "directory": "/home/grep/cfd_solver_for_science/cpp/build",
+  "command": "/usr/bin/c++  -I/home/grep/cfd_solver_for_science/cpp/include -std=gnu++20 -Wall -Wextra -Wpedantic -o CMakeFiles/cfd_studio_cpp.dir/src/visualization/contours.cpp.o -c /home/grep/cfd_solver_for_science/cpp/src/visualization/contours.cpp",
+  "file": "/home/grep/cfd_solver_for_science/cpp/src/visualization/contours.cpp",
+  "output": "CMakeFiles/cfd_studio_cpp.dir/src/visualization/contours.cpp.o"
+},
+{
+  "directory": "/home/grep/cfd_solver_for_science/cpp/build",
+  "command": "/usr/bin/c++  -I/home/grep/cfd_solver_for_science/cpp/include -std=gnu++20 -Wall -Wextra -Wpedantic -o CMakeFiles/cfd_studio_cpp.dir/src/visualization/force_arrows.cpp.o -c /home/grep/cfd_solver_for_science/cpp/src/visualization/force_arrows.cpp",
+  "file": "/home/grep/cfd_solver_for_science/cpp/src/visualization/force_arrows.cpp",
+  "output": "CMakeFiles/cfd_studio_cpp.dir/src/visualization/force_arrows.cpp.o"
+},
+{
+  "directory": "/home/grep/cfd_solver_for_science/cpp/build",
+  "command": "/usr/bin/c++  -I/home/grep/cfd_solver_for_science/cpp/include -std=gnu++20 -Wall -Wextra -Wpedantic -o CMakeFiles/cfd_studio_cpp.dir/src/ui/ui_manager.cpp.o -c /home/grep/cfd_solver_for_science/cpp/src/ui/ui_manager.cpp",
+  "file": "/home/grep/cfd_solver_for_science/cpp/src/ui/ui_manager.cpp",
+  "output": "CMakeFiles/cfd_studio_cpp.dir/src/ui/ui_manager.cpp.o"
+}
+]
