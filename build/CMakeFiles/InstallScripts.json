@@ -1,7 +1,10 @@
 {
 	"InstallScripts" : 
 	[
-		"/home/grep/cfd_solver_for_science/build/cmake_install.cmake"
+		"/home/grep/cfd_solver_for_science/build/cmake_install.cmake",
+		"/home/grep/cfd_solver_for_science/build/solver/cmake_install.cmake",
+		"/home/grep/cfd_solver_for_science/build/tui/cmake_install.cmake",
+		"/home/grep/cfd_solver_for_science/build/visualization/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

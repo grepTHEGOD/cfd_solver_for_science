@@ -63,52 +63,280 @@ CMAKE_BINARY_DIR = /home/grep/cfd_solver_for_science/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/cfd_studio.dir/all
+all: solver/all
+all: tui/all
+all: visualization/all
 .PHONY : all
 
 # The main recursive "codegen" target.
-codegen: CMakeFiles/cfd_studio.dir/codegen
+codegen: solver/codegen
+codegen: tui/codegen
+codegen: visualization/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
-preinstall:
+preinstall: solver/preinstall
+preinstall: tui/preinstall
+preinstall: visualization/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/cfd_studio.dir/clean
+clean: CMakeFiles/run_solver.dir/clean
+clean: CMakeFiles/run_tui.dir/clean
+clean: CMakeFiles/run_visualization.dir/clean
+clean: solver/clean
+clean: tui/clean
+clean: visualization/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/cfd_studio.dir
+# Directory level rules for directory solver
+
+# Recursive "all" directory target.
+solver/all: solver/CMakeFiles/cfd_solver.dir/all
+.PHONY : solver/all
+
+# Recursive "codegen" directory target.
+solver/codegen: solver/CMakeFiles/cfd_solver.dir/codegen
+.PHONY : solver/codegen
+
+# Recursive "preinstall" directory target.
+solver/preinstall:
+.PHONY : solver/preinstall
+
+# Recursive "clean" directory target.
+solver/clean: solver/CMakeFiles/cfd_solver.dir/clean
+.PHONY : solver/clean
+
+#=============================================================================
+# Directory level rules for directory tui
+
+# Recursive "all" directory target.
+tui/all: tui/CMakeFiles/tui_executable.dir/all
+.PHONY : tui/all
+
+# Recursive "codegen" directory target.
+tui/codegen: tui/CMakeFiles/tui_executable.dir/codegen
+.PHONY : tui/codegen
+
+# Recursive "preinstall" directory target.
+tui/preinstall:
+.PHONY : tui/preinstall
+
+# Recursive "clean" directory target.
+tui/clean: tui/CMakeFiles/tui_executable.dir/clean
+.PHONY : tui/clean
+
+#=============================================================================
+# Directory level rules for directory visualization
+
+# Recursive "all" directory target.
+visualization/all: visualization/CMakeFiles/visualization.dir/all
+.PHONY : visualization/all
+
+# Recursive "codegen" directory target.
+visualization/codegen: visualization/CMakeFiles/visualization.dir/codegen
+.PHONY : visualization/codegen
+
+# Recursive "preinstall" directory target.
+visualization/preinstall:
+.PHONY : visualization/preinstall
+
+# Recursive "clean" directory target.
+visualization/clean: visualization/CMakeFiles/visualization.dir/clean
+.PHONY : visualization/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/run_solver.dir
 
 # All Build rule for target.
-CMakeFiles/cfd_studio.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cfd_studio.dir/build.make CMakeFiles/cfd_studio.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cfd_studio.dir/build.make CMakeFiles/cfd_studio.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/grep/cfd_solver_for_science/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11 "Built target cfd_studio"
-.PHONY : CMakeFiles/cfd_studio.dir/all
+CMakeFiles/run_solver.dir/all: solver/CMakeFiles/cfd_solver.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_solver.dir/build.make CMakeFiles/run_solver.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_solver.dir/build.make CMakeFiles/run_solver.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/grep/cfd_solver_for_science/build/CMakeFiles --progress-num= "Built target run_solver"
+.PHONY : CMakeFiles/run_solver.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/cfd_studio.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/grep/cfd_solver_for_science/build/CMakeFiles 11
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/cfd_studio.dir/all
+CMakeFiles/run_solver.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/grep/cfd_solver_for_science/build/CMakeFiles 3
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/run_solver.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/grep/cfd_solver_for_science/build/CMakeFiles 0
-.PHONY : CMakeFiles/cfd_studio.dir/rule
+.PHONY : CMakeFiles/run_solver.dir/rule
 
 # Convenience name for target.
-cfd_studio: CMakeFiles/cfd_studio.dir/rule
-.PHONY : cfd_studio
+run_solver: CMakeFiles/run_solver.dir/rule
+.PHONY : run_solver
 
 # codegen rule for target.
-CMakeFiles/cfd_studio.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cfd_studio.dir/build.make CMakeFiles/cfd_studio.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/grep/cfd_solver_for_science/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11 "Finished codegen for target cfd_studio"
-.PHONY : CMakeFiles/cfd_studio.dir/codegen
+CMakeFiles/run_solver.dir/codegen: solver/CMakeFiles/cfd_solver.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_solver.dir/build.make CMakeFiles/run_solver.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/grep/cfd_solver_for_science/build/CMakeFiles --progress-num= "Finished codegen for target run_solver"
+.PHONY : CMakeFiles/run_solver.dir/codegen
 
 # clean rule for target.
-CMakeFiles/cfd_studio.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cfd_studio.dir/build.make CMakeFiles/cfd_studio.dir/clean
-.PHONY : CMakeFiles/cfd_studio.dir/clean
+CMakeFiles/run_solver.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_solver.dir/build.make CMakeFiles/run_solver.dir/clean
+.PHONY : CMakeFiles/run_solver.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/run_tui.dir
+
+# All Build rule for target.
+CMakeFiles/run_tui.dir/all: tui/CMakeFiles/tui_executable.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tui.dir/build.make CMakeFiles/run_tui.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tui.dir/build.make CMakeFiles/run_tui.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/grep/cfd_solver_for_science/build/CMakeFiles --progress-num= "Built target run_tui"
+.PHONY : CMakeFiles/run_tui.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/run_tui.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/grep/cfd_solver_for_science/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/run_tui.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/grep/cfd_solver_for_science/build/CMakeFiles 0
+.PHONY : CMakeFiles/run_tui.dir/rule
+
+# Convenience name for target.
+run_tui: CMakeFiles/run_tui.dir/rule
+.PHONY : run_tui
+
+# codegen rule for target.
+CMakeFiles/run_tui.dir/codegen: tui/CMakeFiles/tui_executable.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tui.dir/build.make CMakeFiles/run_tui.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/grep/cfd_solver_for_science/build/CMakeFiles --progress-num= "Finished codegen for target run_tui"
+.PHONY : CMakeFiles/run_tui.dir/codegen
+
+# clean rule for target.
+CMakeFiles/run_tui.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tui.dir/build.make CMakeFiles/run_tui.dir/clean
+.PHONY : CMakeFiles/run_tui.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/run_visualization.dir
+
+# All Build rule for target.
+CMakeFiles/run_visualization.dir/all: visualization/CMakeFiles/visualization.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_visualization.dir/build.make CMakeFiles/run_visualization.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_visualization.dir/build.make CMakeFiles/run_visualization.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/grep/cfd_solver_for_science/build/CMakeFiles --progress-num= "Built target run_visualization"
+.PHONY : CMakeFiles/run_visualization.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/run_visualization.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/grep/cfd_solver_for_science/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/run_visualization.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/grep/cfd_solver_for_science/build/CMakeFiles 0
+.PHONY : CMakeFiles/run_visualization.dir/rule
+
+# Convenience name for target.
+run_visualization: CMakeFiles/run_visualization.dir/rule
+.PHONY : run_visualization
+
+# codegen rule for target.
+CMakeFiles/run_visualization.dir/codegen: visualization/CMakeFiles/visualization.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_visualization.dir/build.make CMakeFiles/run_visualization.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/grep/cfd_solver_for_science/build/CMakeFiles --progress-num= "Finished codegen for target run_visualization"
+.PHONY : CMakeFiles/run_visualization.dir/codegen
+
+# clean rule for target.
+CMakeFiles/run_visualization.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_visualization.dir/build.make CMakeFiles/run_visualization.dir/clean
+.PHONY : CMakeFiles/run_visualization.dir/clean
+
+#=============================================================================
+# Target rules for target solver/CMakeFiles/cfd_solver.dir
+
+# All Build rule for target.
+solver/CMakeFiles/cfd_solver.dir/all:
+	$(MAKE) $(MAKESILENT) -f solver/CMakeFiles/cfd_solver.dir/build.make solver/CMakeFiles/cfd_solver.dir/depend
+	$(MAKE) $(MAKESILENT) -f solver/CMakeFiles/cfd_solver.dir/build.make solver/CMakeFiles/cfd_solver.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/grep/cfd_solver_for_science/build/CMakeFiles --progress-num=1,2,3 "Built target cfd_solver"
+.PHONY : solver/CMakeFiles/cfd_solver.dir/all
+
+# Build rule for subdir invocation for target.
+solver/CMakeFiles/cfd_solver.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/grep/cfd_solver_for_science/build/CMakeFiles 3
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 solver/CMakeFiles/cfd_solver.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/grep/cfd_solver_for_science/build/CMakeFiles 0
+.PHONY : solver/CMakeFiles/cfd_solver.dir/rule
+
+# Convenience name for target.
+cfd_solver: solver/CMakeFiles/cfd_solver.dir/rule
+.PHONY : cfd_solver
+
+# codegen rule for target.
+solver/CMakeFiles/cfd_solver.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f solver/CMakeFiles/cfd_solver.dir/build.make solver/CMakeFiles/cfd_solver.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/grep/cfd_solver_for_science/build/CMakeFiles --progress-num=1,2,3 "Finished codegen for target cfd_solver"
+.PHONY : solver/CMakeFiles/cfd_solver.dir/codegen
+
+# clean rule for target.
+solver/CMakeFiles/cfd_solver.dir/clean:
+	$(MAKE) $(MAKESILENT) -f solver/CMakeFiles/cfd_solver.dir/build.make solver/CMakeFiles/cfd_solver.dir/clean
+.PHONY : solver/CMakeFiles/cfd_solver.dir/clean
+
+#=============================================================================
+# Target rules for target tui/CMakeFiles/tui_executable.dir
+
+# All Build rule for target.
+tui/CMakeFiles/tui_executable.dir/all:
+	$(MAKE) $(MAKESILENT) -f tui/CMakeFiles/tui_executable.dir/build.make tui/CMakeFiles/tui_executable.dir/depend
+	$(MAKE) $(MAKESILENT) -f tui/CMakeFiles/tui_executable.dir/build.make tui/CMakeFiles/tui_executable.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/grep/cfd_solver_for_science/build/CMakeFiles --progress-num=4,5 "Built target tui_executable"
+.PHONY : tui/CMakeFiles/tui_executable.dir/all
+
+# Build rule for subdir invocation for target.
+tui/CMakeFiles/tui_executable.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/grep/cfd_solver_for_science/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tui/CMakeFiles/tui_executable.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/grep/cfd_solver_for_science/build/CMakeFiles 0
+.PHONY : tui/CMakeFiles/tui_executable.dir/rule
+
+# Convenience name for target.
+tui_executable: tui/CMakeFiles/tui_executable.dir/rule
+.PHONY : tui_executable
+
+# codegen rule for target.
+tui/CMakeFiles/tui_executable.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f tui/CMakeFiles/tui_executable.dir/build.make tui/CMakeFiles/tui_executable.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/grep/cfd_solver_for_science/build/CMakeFiles --progress-num=4,5 "Finished codegen for target tui_executable"
+.PHONY : tui/CMakeFiles/tui_executable.dir/codegen
+
+# clean rule for target.
+tui/CMakeFiles/tui_executable.dir/clean:
+	$(MAKE) $(MAKESILENT) -f tui/CMakeFiles/tui_executable.dir/build.make tui/CMakeFiles/tui_executable.dir/clean
+.PHONY : tui/CMakeFiles/tui_executable.dir/clean
+
+#=============================================================================
+# Target rules for target visualization/CMakeFiles/visualization.dir
+
+# All Build rule for target.
+visualization/CMakeFiles/visualization.dir/all:
+	$(MAKE) $(MAKESILENT) -f visualization/CMakeFiles/visualization.dir/build.make visualization/CMakeFiles/visualization.dir/depend
+	$(MAKE) $(MAKESILENT) -f visualization/CMakeFiles/visualization.dir/build.make visualization/CMakeFiles/visualization.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/grep/cfd_solver_for_science/build/CMakeFiles --progress-num=6,7 "Built target visualization"
+.PHONY : visualization/CMakeFiles/visualization.dir/all
+
+# Build rule for subdir invocation for target.
+visualization/CMakeFiles/visualization.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/grep/cfd_solver_for_science/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 visualization/CMakeFiles/visualization.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/grep/cfd_solver_for_science/build/CMakeFiles 0
+.PHONY : visualization/CMakeFiles/visualization.dir/rule
+
+# Convenience name for target.
+visualization: visualization/CMakeFiles/visualization.dir/rule
+.PHONY : visualization
+
+# codegen rule for target.
+visualization/CMakeFiles/visualization.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f visualization/CMakeFiles/visualization.dir/build.make visualization/CMakeFiles/visualization.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/grep/cfd_solver_for_science/build/CMakeFiles --progress-num=6,7 "Finished codegen for target visualization"
+.PHONY : visualization/CMakeFiles/visualization.dir/codegen
+
+# clean rule for target.
+visualization/CMakeFiles/visualization.dir/clean:
+	$(MAKE) $(MAKESILENT) -f visualization/CMakeFiles/visualization.dir/build.make visualization/CMakeFiles/visualization.dir/clean
+.PHONY : visualization/CMakeFiles/visualization.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

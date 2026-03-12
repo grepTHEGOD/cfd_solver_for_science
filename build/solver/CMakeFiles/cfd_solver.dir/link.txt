@@ -1,0 +1,1 @@
+/usr/bin/cc  -Wall -Wextra -O3 -Wall -Wextra -O3 -march=native -Wl,--dependency-file=CMakeFiles/cfd_solver.dir/link.d CMakeFiles/cfd_solver.dir/main.c.o CMakeFiles/cfd_solver.dir/cfd_solver.c.o -o cfd_solver  -lm

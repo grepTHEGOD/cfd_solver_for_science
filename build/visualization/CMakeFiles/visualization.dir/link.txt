@@ -1,0 +1,1 @@
+/usr/bin/cc  -Wall -Wextra -O3 -Wall -Wextra -Wl,--dependency-file=CMakeFiles/visualization.dir/link.d CMakeFiles/visualization.dir/main.c.o -o visualization  -lraylib -lm -lpthread -ldl

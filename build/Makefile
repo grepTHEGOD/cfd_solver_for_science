@@ -162,257 +162,82 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named cfd_studio
+# Target rules for targets named run_solver
 
 # Build rule for target.
-cfd_studio: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cfd_studio
-.PHONY : cfd_studio
+run_solver: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 run_solver
+.PHONY : run_solver
 
 # fast build rule for target.
-cfd_studio/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cfd_studio.dir/build.make CMakeFiles/cfd_studio.dir/build
-.PHONY : cfd_studio/fast
+run_solver/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_solver.dir/build.make CMakeFiles/run_solver.dir/build
+.PHONY : run_solver/fast
 
-src/cfd_app.o: src/cfd_app.c.o
-.PHONY : src/cfd_app.o
+#=============================================================================
+# Target rules for targets named run_tui
 
-# target to build an object file
-src/cfd_app.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cfd_studio.dir/build.make CMakeFiles/cfd_studio.dir/src/cfd_app.c.o
-.PHONY : src/cfd_app.c.o
+# Build rule for target.
+run_tui: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 run_tui
+.PHONY : run_tui
 
-src/cfd_app.i: src/cfd_app.c.i
-.PHONY : src/cfd_app.i
+# fast build rule for target.
+run_tui/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tui.dir/build.make CMakeFiles/run_tui.dir/build
+.PHONY : run_tui/fast
 
-# target to preprocess a source file
-src/cfd_app.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cfd_studio.dir/build.make CMakeFiles/cfd_studio.dir/src/cfd_app.c.i
-.PHONY : src/cfd_app.c.i
+#=============================================================================
+# Target rules for targets named run_visualization
 
-src/cfd_app.s: src/cfd_app.c.s
-.PHONY : src/cfd_app.s
+# Build rule for target.
+run_visualization: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 run_visualization
+.PHONY : run_visualization
 
-# target to generate assembly for a file
-src/cfd_app.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cfd_studio.dir/build.make CMakeFiles/cfd_studio.dir/src/cfd_app.c.s
-.PHONY : src/cfd_app.c.s
+# fast build rule for target.
+run_visualization/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_visualization.dir/build.make CMakeFiles/run_visualization.dir/build
+.PHONY : run_visualization/fast
 
-src/main.o: src/main.c.o
-.PHONY : src/main.o
+#=============================================================================
+# Target rules for targets named cfd_solver
 
-# target to build an object file
-src/main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cfd_studio.dir/build.make CMakeFiles/cfd_studio.dir/src/main.c.o
-.PHONY : src/main.c.o
+# Build rule for target.
+cfd_solver: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cfd_solver
+.PHONY : cfd_solver
 
-src/main.i: src/main.c.i
-.PHONY : src/main.i
+# fast build rule for target.
+cfd_solver/fast:
+	$(MAKE) $(MAKESILENT) -f solver/CMakeFiles/cfd_solver.dir/build.make solver/CMakeFiles/cfd_solver.dir/build
+.PHONY : cfd_solver/fast
 
-# target to preprocess a source file
-src/main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cfd_studio.dir/build.make CMakeFiles/cfd_studio.dir/src/main.c.i
-.PHONY : src/main.c.i
+#=============================================================================
+# Target rules for targets named tui_executable
 
-src/main.s: src/main.c.s
-.PHONY : src/main.s
+# Build rule for target.
+tui_executable: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tui_executable
+.PHONY : tui_executable
 
-# target to generate assembly for a file
-src/main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cfd_studio.dir/build.make CMakeFiles/cfd_studio.dir/src/main.c.s
-.PHONY : src/main.c.s
+# fast build rule for target.
+tui_executable/fast:
+	$(MAKE) $(MAKESILENT) -f tui/CMakeFiles/tui_executable.dir/build.make tui/CMakeFiles/tui_executable.dir/build
+.PHONY : tui_executable/fast
 
-src/models/model_manager.o: src/models/model_manager.c.o
-.PHONY : src/models/model_manager.o
+#=============================================================================
+# Target rules for targets named visualization
 
-# target to build an object file
-src/models/model_manager.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cfd_studio.dir/build.make CMakeFiles/cfd_studio.dir/src/models/model_manager.c.o
-.PHONY : src/models/model_manager.c.o
+# Build rule for target.
+visualization: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 visualization
+.PHONY : visualization
 
-src/models/model_manager.i: src/models/model_manager.c.i
-.PHONY : src/models/model_manager.i
-
-# target to preprocess a source file
-src/models/model_manager.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cfd_studio.dir/build.make CMakeFiles/cfd_studio.dir/src/models/model_manager.c.i
-.PHONY : src/models/model_manager.c.i
-
-src/models/model_manager.s: src/models/model_manager.c.s
-.PHONY : src/models/model_manager.s
-
-# target to generate assembly for a file
-src/models/model_manager.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cfd_studio.dir/build.make CMakeFiles/cfd_studio.dir/src/models/model_manager.c.s
-.PHONY : src/models/model_manager.c.s
-
-src/physics/atmosphere.o: src/physics/atmosphere.c.o
-.PHONY : src/physics/atmosphere.o
-
-# target to build an object file
-src/physics/atmosphere.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cfd_studio.dir/build.make CMakeFiles/cfd_studio.dir/src/physics/atmosphere.c.o
-.PHONY : src/physics/atmosphere.c.o
-
-src/physics/atmosphere.i: src/physics/atmosphere.c.i
-.PHONY : src/physics/atmosphere.i
-
-# target to preprocess a source file
-src/physics/atmosphere.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cfd_studio.dir/build.make CMakeFiles/cfd_studio.dir/src/physics/atmosphere.c.i
-.PHONY : src/physics/atmosphere.c.i
-
-src/physics/atmosphere.s: src/physics/atmosphere.c.s
-.PHONY : src/physics/atmosphere.s
-
-# target to generate assembly for a file
-src/physics/atmosphere.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cfd_studio.dir/build.make CMakeFiles/cfd_studio.dir/src/physics/atmosphere.c.s
-.PHONY : src/physics/atmosphere.c.s
-
-src/physics/forces.o: src/physics/forces.c.o
-.PHONY : src/physics/forces.o
-
-# target to build an object file
-src/physics/forces.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cfd_studio.dir/build.make CMakeFiles/cfd_studio.dir/src/physics/forces.c.o
-.PHONY : src/physics/forces.c.o
-
-src/physics/forces.i: src/physics/forces.c.i
-.PHONY : src/physics/forces.i
-
-# target to preprocess a source file
-src/physics/forces.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cfd_studio.dir/build.make CMakeFiles/cfd_studio.dir/src/physics/forces.c.i
-.PHONY : src/physics/forces.c.i
-
-src/physics/forces.s: src/physics/forces.c.s
-.PHONY : src/physics/forces.s
-
-# target to generate assembly for a file
-src/physics/forces.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cfd_studio.dir/build.make CMakeFiles/cfd_studio.dir/src/physics/forces.c.s
-.PHONY : src/physics/forces.c.s
-
-src/physics/heat_transfer.o: src/physics/heat_transfer.c.o
-.PHONY : src/physics/heat_transfer.o
-
-# target to build an object file
-src/physics/heat_transfer.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cfd_studio.dir/build.make CMakeFiles/cfd_studio.dir/src/physics/heat_transfer.c.o
-.PHONY : src/physics/heat_transfer.c.o
-
-src/physics/heat_transfer.i: src/physics/heat_transfer.c.i
-.PHONY : src/physics/heat_transfer.i
-
-# target to preprocess a source file
-src/physics/heat_transfer.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cfd_studio.dir/build.make CMakeFiles/cfd_studio.dir/src/physics/heat_transfer.c.i
-.PHONY : src/physics/heat_transfer.c.i
-
-src/physics/heat_transfer.s: src/physics/heat_transfer.c.s
-.PHONY : src/physics/heat_transfer.s
-
-# target to generate assembly for a file
-src/physics/heat_transfer.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cfd_studio.dir/build.make CMakeFiles/cfd_studio.dir/src/physics/heat_transfer.c.s
-.PHONY : src/physics/heat_transfer.c.s
-
-src/physics/units.o: src/physics/units.c.o
-.PHONY : src/physics/units.o
-
-# target to build an object file
-src/physics/units.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cfd_studio.dir/build.make CMakeFiles/cfd_studio.dir/src/physics/units.c.o
-.PHONY : src/physics/units.c.o
-
-src/physics/units.i: src/physics/units.c.i
-.PHONY : src/physics/units.i
-
-# target to preprocess a source file
-src/physics/units.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cfd_studio.dir/build.make CMakeFiles/cfd_studio.dir/src/physics/units.c.i
-.PHONY : src/physics/units.c.i
-
-src/physics/units.s: src/physics/units.c.s
-.PHONY : src/physics/units.s
-
-# target to generate assembly for a file
-src/physics/units.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cfd_studio.dir/build.make CMakeFiles/cfd_studio.dir/src/physics/units.c.s
-.PHONY : src/physics/units.c.s
-
-src/ui/control_panel.o: src/ui/control_panel.c.o
-.PHONY : src/ui/control_panel.o
-
-# target to build an object file
-src/ui/control_panel.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cfd_studio.dir/build.make CMakeFiles/cfd_studio.dir/src/ui/control_panel.c.o
-.PHONY : src/ui/control_panel.c.o
-
-src/ui/control_panel.i: src/ui/control_panel.c.i
-.PHONY : src/ui/control_panel.i
-
-# target to preprocess a source file
-src/ui/control_panel.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cfd_studio.dir/build.make CMakeFiles/cfd_studio.dir/src/ui/control_panel.c.i
-.PHONY : src/ui/control_panel.c.i
-
-src/ui/control_panel.s: src/ui/control_panel.c.s
-.PHONY : src/ui/control_panel.s
-
-# target to generate assembly for a file
-src/ui/control_panel.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cfd_studio.dir/build.make CMakeFiles/cfd_studio.dir/src/ui/control_panel.c.s
-.PHONY : src/ui/control_panel.c.s
-
-src/ui/gui_framework.o: src/ui/gui_framework.c.o
-.PHONY : src/ui/gui_framework.o
-
-# target to build an object file
-src/ui/gui_framework.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cfd_studio.dir/build.make CMakeFiles/cfd_studio.dir/src/ui/gui_framework.c.o
-.PHONY : src/ui/gui_framework.c.o
-
-src/ui/gui_framework.i: src/ui/gui_framework.c.i
-.PHONY : src/ui/gui_framework.i
-
-# target to preprocess a source file
-src/ui/gui_framework.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cfd_studio.dir/build.make CMakeFiles/cfd_studio.dir/src/ui/gui_framework.c.i
-.PHONY : src/ui/gui_framework.c.i
-
-src/ui/gui_framework.s: src/ui/gui_framework.c.s
-.PHONY : src/ui/gui_framework.s
-
-# target to generate assembly for a file
-src/ui/gui_framework.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cfd_studio.dir/build.make CMakeFiles/cfd_studio.dir/src/ui/gui_framework.c.s
-.PHONY : src/ui/gui_framework.c.s
-
-src/viewport/viewport_3d.o: src/viewport/viewport_3d.c.o
-.PHONY : src/viewport/viewport_3d.o
-
-# target to build an object file
-src/viewport/viewport_3d.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cfd_studio.dir/build.make CMakeFiles/cfd_studio.dir/src/viewport/viewport_3d.c.o
-.PHONY : src/viewport/viewport_3d.c.o
-
-src/viewport/viewport_3d.i: src/viewport/viewport_3d.c.i
-.PHONY : src/viewport/viewport_3d.i
-
-# target to preprocess a source file
-src/viewport/viewport_3d.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cfd_studio.dir/build.make CMakeFiles/cfd_studio.dir/src/viewport/viewport_3d.c.i
-.PHONY : src/viewport/viewport_3d.c.i
-
-src/viewport/viewport_3d.s: src/viewport/viewport_3d.c.s
-.PHONY : src/viewport/viewport_3d.s
-
-# target to generate assembly for a file
-src/viewport/viewport_3d.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cfd_studio.dir/build.make CMakeFiles/cfd_studio.dir/src/viewport/viewport_3d.c.s
-.PHONY : src/viewport/viewport_3d.c.s
+# fast build rule for target.
+visualization/fast:
+	$(MAKE) $(MAKESILENT) -f visualization/CMakeFiles/visualization.dir/build.make visualization/CMakeFiles/visualization.dir/build
+.PHONY : visualization/fast
 
 # Help Target
 help:
@@ -426,37 +251,12 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... cfd_studio"
-	@echo "... src/cfd_app.o"
-	@echo "... src/cfd_app.i"
-	@echo "... src/cfd_app.s"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
-	@echo "... src/models/model_manager.o"
-	@echo "... src/models/model_manager.i"
-	@echo "... src/models/model_manager.s"
-	@echo "... src/physics/atmosphere.o"
-	@echo "... src/physics/atmosphere.i"
-	@echo "... src/physics/atmosphere.s"
-	@echo "... src/physics/forces.o"
-	@echo "... src/physics/forces.i"
-	@echo "... src/physics/forces.s"
-	@echo "... src/physics/heat_transfer.o"
-	@echo "... src/physics/heat_transfer.i"
-	@echo "... src/physics/heat_transfer.s"
-	@echo "... src/physics/units.o"
-	@echo "... src/physics/units.i"
-	@echo "... src/physics/units.s"
-	@echo "... src/ui/control_panel.o"
-	@echo "... src/ui/control_panel.i"
-	@echo "... src/ui/control_panel.s"
-	@echo "... src/ui/gui_framework.o"
-	@echo "... src/ui/gui_framework.i"
-	@echo "... src/ui/gui_framework.s"
-	@echo "... src/viewport/viewport_3d.o"
-	@echo "... src/viewport/viewport_3d.i"
-	@echo "... src/viewport/viewport_3d.s"
+	@echo "... run_solver"
+	@echo "... run_tui"
+	@echo "... run_visualization"
+	@echo "... cfd_solver"
+	@echo "... tui_executable"
+	@echo "... visualization"
 .PHONY : help
 
 
