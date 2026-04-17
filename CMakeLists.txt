@@ -9,6 +9,8 @@ pkg_check_modules(RAYLIB QUIET raylib)
 
 add_subdirectory(solver)
 add_subdirectory(tui)
+add_subdirectory(gui)
+add_subdirectory(scramjet)
 
 if(RAYLIB_FOUND)
     add_subdirectory(visualization)
@@ -26,6 +28,12 @@ add_custom_target(run_solver
 add_custom_target(run_tui
     COMMAND tui/tui_executable
     DEPENDS tui_executable
+    WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
+)
+
+add_custom_target(run_gui
+    COMMAND gui/gui_executable
+    DEPENDS gui_executable
     WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
 )
 

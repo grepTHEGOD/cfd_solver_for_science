@@ -165,7 +165,7 @@ ls -la solver/cfd_solver tui/tui_executable visualization/visualization
 $ ./solver/cfd_solver
 
   ╔══════════════════════════════════════════════════════════════╗
-  ║          CFD SOLVER FOR SCIENCE - VERSION 2.0                ║
+  ║          CFD SOLVER FOR SCIENCE - VERSION 2.1                ║
   ║     2D Compressible Navier-Stokes Flow Solver               ║
   ╚══════════════════════════════════════════════════════════════╝
 
@@ -379,15 +379,18 @@ cfd_solver_for_science/
 │   ├── main.c              # Entry point, CLI parser
 │   ├── cfd_solver.c        # Navier-Stokes implementation
 │   ├── cfd_solver.h        # Public API
+│   ├── CMakeLists.txt      # Solver build config
 │   └── physics/
-│       ├── atmosphere.c/h  # ISA atmosphere model
-│       ├── forces.c/h       # Aerodynamic calculations
+│       ├── atmosphere.c/h   # ISA atmosphere model
+│       ├── forces.c/h      # Aerodynamic calculations
 │       └── heat_transfer.c/h  # Convective heat transfer
 ├── tui/
-│   └── main.c              # Terminal UI
+│   ├── main.c              # Terminal UI
+│   └── CMakeLists.txt      # TUI build config
 ├── visualization/
-│   └── main.c              # raylib 3D visualization
-├── CMakeLists.txt          # Build configuration
+│   ├── main.c              # raylib 3D visualization
+│   └── CMakeLists.txt      # Visualization build config
+├── CMakeLists.txt          # Root build configuration
 └── README.md
 ```
 
@@ -551,7 +554,7 @@ export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 
 MIT License
 
-Copyright (c) 2024 CFD Solver for Science
+Copyright (c) 2026 CFD Solver for Science
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -575,7 +578,30 @@ SOFTWARE.
 
 ## References
 
+### Fundamentals
+
 1. Anderson, J. D. (1995). *Computational Fluid Dynamics: The Basics with Applications*. McGraw-Hill.
 2. Hirsch, C. (2007). *Numerical Computation of Internal and External Flows*. Elsevier.
 3. Blazek, J. (2015). *Computational Fluid Dynamics: Principles and Applications*. Elsevier.
-4. Roe, P. L. (1981). "Approximate Riemann Solvers, Parameter Vectors, and Difference Schemes". *Journal of Computational Physics*.
+4. Tannehill, J. C., Anderson, D. A., & Pletcher, R. H. (1997). *Computational Fluid Mechanics and Heat Transfer*. Taylor & Francis.
+5. Ferziger, J. H., & Peric, M. (2002). *Computational Methods for Fluid Dynamics*. Springer.
+
+### Numerical Methods
+
+6. Roe, P. L. (1981). "Approximate Riemann Solvers, Parameter Vectors, and Difference Schemes". *Journal of Computational Physics*, 43(2), 357-372.
+7. van Leer, B. (1979). "Towards the Ultimate Conservative Difference Scheme V. A Second-Order Sequel to Godunov's Method". *Journal of Computational Physics*, 32(1), 101-136.
+8. Harten, A., Lax, P. D., & van Leer, B. (1983). "On Upstream Differencing and Godunov-Type Schemes for Hyperbolic Conservation Laws". *SIAM Review*, 25(1), 35-61.
+9. Osher, S., & Solomon, F. (1982). "Upwind Difference Schemes for Hyperbolic Systems of Conservation Laws". *Mathematics of Computation*, 38(158), 339-374.
+10. Toro, E. F. (2009). *Riemann Solvers and Numerical Methods for Fluid Dynamics*. Springer.
+
+### Aerodynamics & Heat Transfer
+
+11. Anderson, J. D. (2003). *Modern Compressible Flow: With Historical Perspective*. McGraw-Hill.
+12. White, F. M. (2011). *Viscous Fluid Flow*. McGraw-Hill.
+13. Schlichting, H., & Gersten, K. (2017). *Boundary-Layer Theory*. Springer.
+14. John, J. E. A., & Haberman, W. L. (1988). *Introduction to Fluid Mechanics*. Prentice Hall.
+
+### Atmosphere & Gas Dynamics
+
+15. U.S. Standard Atmosphere (1976). *U.S. Standard Atmosphere*. U.S. Government Printing Office.
+16. Courant, R., & Friedrichs, K. O. (1948). *Supersonic Flow and Shock Waves*. Interscience Publishers.

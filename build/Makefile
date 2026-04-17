@@ -188,6 +188,19 @@ run_tui/fast:
 .PHONY : run_tui/fast
 
 #=============================================================================
+# Target rules for targets named run_gui
+
+# Build rule for target.
+run_gui: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 run_gui
+.PHONY : run_gui
+
+# fast build rule for target.
+run_gui/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_gui.dir/build.make CMakeFiles/run_gui.dir/build
+.PHONY : run_gui/fast
+
+#=============================================================================
 # Target rules for targets named run_visualization
 
 # Build rule for target.
@@ -227,6 +240,58 @@ tui_executable/fast:
 .PHONY : tui_executable/fast
 
 #=============================================================================
+# Target rules for targets named physics_core
+
+# Build rule for target.
+physics_core: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 physics_core
+.PHONY : physics_core
+
+# fast build rule for target.
+physics_core/fast:
+	$(MAKE) $(MAKESILENT) -f gui/CMakeFiles/physics_core.dir/build.make gui/CMakeFiles/physics_core.dir/build
+.PHONY : physics_core/fast
+
+#=============================================================================
+# Target rules for targets named gui_executable
+
+# Build rule for target.
+gui_executable: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gui_executable
+.PHONY : gui_executable
+
+# fast build rule for target.
+gui_executable/fast:
+	$(MAKE) $(MAKESILENT) -f gui/CMakeFiles/gui_executable.dir/build.make gui/CMakeFiles/gui_executable.dir/build
+.PHONY : gui_executable/fast
+
+#=============================================================================
+# Target rules for targets named scramjet
+
+# Build rule for target.
+scramjet: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 scramjet
+.PHONY : scramjet
+
+# fast build rule for target.
+scramjet/fast:
+	$(MAKE) $(MAKESILENT) -f scramjet/CMakeFiles/scramjet.dir/build.make scramjet/CMakeFiles/scramjet.dir/build
+.PHONY : scramjet/fast
+
+#=============================================================================
+# Target rules for targets named run_scramjet
+
+# Build rule for target.
+run_scramjet: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 run_scramjet
+.PHONY : run_scramjet
+
+# fast build rule for target.
+run_scramjet/fast:
+	$(MAKE) $(MAKESILENT) -f scramjet/CMakeFiles/run_scramjet.dir/build.make scramjet/CMakeFiles/run_scramjet.dir/build
+.PHONY : run_scramjet/fast
+
+#=============================================================================
 # Target rules for targets named visualization
 
 # Build rule for target.
@@ -251,10 +316,15 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... run_gui"
+	@echo "... run_scramjet"
 	@echo "... run_solver"
 	@echo "... run_tui"
 	@echo "... run_visualization"
 	@echo "... cfd_solver"
+	@echo "... gui_executable"
+	@echo "... physics_core"
+	@echo "... scramjet"
 	@echo "... tui_executable"
 	@echo "... visualization"
 .PHONY : help

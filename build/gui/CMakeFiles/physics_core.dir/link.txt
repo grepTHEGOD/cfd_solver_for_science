@@ -1,0 +1,2 @@
+/usr/bin/ar qc libphysics_core.a CMakeFiles/physics_core.dir/__/core/physics_engine.cpp.o CMakeFiles/physics_core.dir/__/core/physics_bridge.cpp.o CMakeFiles/physics_core.dir/__/core/model_loader.cpp.o
+/usr/bin/ranlib libphysics_core.a

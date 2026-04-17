@@ -46,6 +46,8 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/grep/cfd_solver_for_science/build/solver/cmake_install.cmake")
   include("/home/grep/cfd_solver_for_science/build/tui/cmake_install.cmake")
+  include("/home/grep/cfd_solver_for_science/build/gui/cmake_install.cmake")
+  include("/home/grep/cfd_solver_for_science/build/scramjet/cmake_install.cmake")
   include("/home/grep/cfd_solver_for_science/build/visualization/cmake_install.cmake")
 
 endif()
